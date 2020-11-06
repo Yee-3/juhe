@@ -1,0 +1,370 @@
+<!--pages/Introduction/Introduction.wxml-->
+
+<!-- 共用头部 -->
+<!-- 头部 -->
+<view class="in_boxs">
+	<view class="in_box">
+		<view class="index_top">
+			<view class="logo">
+				<image src="../images/logo.png"></image>
+			</view>
+			<view class="top_right">
+				<view class="top_r_l">
+					<view class="phone1">
+						<p>24小时免费电话</p>
+					</view>
+					<view class="phone2">
+						<view class="phone2_img">
+							<image src="../images/phone1.png"></image>
+						</view>
+						<view class="phone2_wen">
+							<p>{{phone}}</p>
+						</view>
+					</view>
+				</view>
+				<view class="top_r_r" bindtap="navSilce">
+					<image src="../images/nav.png"></image>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<!-- 导航 -->
+<view class="nav_zong" wx:if="{{isShow}}" bindtap="navSilce">
+	<view class="nav1">
+		<view class="in_box">
+			<view class="nav1_nr">
+				<ul>
+					<li catchtap="aboutUs">
+						<!-- a链接 -->
+						<p>关于我们</p>
+					</li>
+					<li catchtap="product">
+						<!-- a链接 -->
+						<p>产品中心</p>
+					</li>
+					<li catchtap="case">
+						<!-- a链接 -->
+						<p>案例中心</p>
+					</li>
+					<li catchtap="news">
+						<!-- a链接 -->
+						<p>新闻中心</p>
+					</li>
+					<li catchtap="video">
+						<!-- a链接 -->
+						<p>视频中心</p>
+					</li>
+					<li catchtap="service">
+						<!-- a链接 -->
+						<p>服务中心</p>
+					</li>
+					<li catchtap="contact">
+						<!-- a链接 -->
+						<p>联系我们</p>
+					</li>
+				</ul>
+			</view>
+		</view>
+
+	</view>
+</view>
+<!-- banner -->
+<view class="banner">
+	<image src="../images/banner.jpg"></image>
+</view>
+<!-- 面包屑 -->
+<view class="mbx">
+	<view class="in_box">
+		<view class="mbx_tu">
+			<image src="../images/mbx_tu.png"></image>
+		</view>
+		<view class="mbx_a">
+			<ul>
+				<li>
+					<!-- a 链接 -->
+					<p>首页</p> >
+				</li>
+				<li>
+					<!-- a 链接 -->
+					<p>关于我们</p> >
+				</li>
+				<li>
+					<!-- a 链接 -->
+					<p>{{list[indexs].title}}</p>
+				</li>
+			</ul>
+		</view>
+	</view>
+</view>
+<!-- 内容 -->
+<view class="in_box">
+	<view class="introduction_top">
+		<view class="case_title">
+			<ul>
+				<li class="{{indexs==index?'case_on':''}}" wx:for="{{list}}" data-index="{{index}}" bindtap="toggle">
+					<!-- tab -->
+					<p>{{item.title}}</p>
+				</li>
+			</ul>
+		</view>
+	</view>
+</view>
+<!-- 公司简介 -->
+<view wx:if="{{false}}">
+	<!-- 内容 -->
+	<view class="in_box">
+		<view class="introduction_top">
+
+			<!-- 一文字 -->
+			<view class="intro_wen">
+				<view class="intro_title">
+					<view class="tro_tit">
+						<image src="../images/intro_tit.png"></image>
+					</view>
+					<view class="tro_wen">
+						<h6>依靠高新技术，依靠科学管理，确保用户满意</h6>
+					</view>
+				</view>
+				<view class="intro_wen1">
+					<view class="intro_wen2">
+						<p>山东聚合精密自动化设备有限公司，拥有多套现代化生产设备，主营产品：全自动隧道洗车机，无人值守洗车机，全自动无接触洗车机，厂房面积15000余平米
+							，职工220人，专业致力于全自动电脑洗车机产品研发，生产和销售的高新技术企业，公司拥有长期从事洗车机产品研发的高级人才，引进国内外先进技术，是目前国内较大的全自动洗车机品牌自动洗车机生产基地。</p>
+					</view>
+					<view class="intro_wen2">
+						<p>
+							辉腾洗车设备产品形式多样，品种齐全，主要产品有往复式全自动洗车机、隧道式电脑洗车机、无接触水斧洗车机、大巴自动洗车机、洗轮机等产品,辉腾公司作为加油站配套服务企业，在加油站标识标牌、加油站整体装修领域产品质量品质行业领先，隧道洗车机，2017年投资1200万成立山东聚合精密自动化设备有限公司,
+							公司坐落于庆云县尚堂镇厚德路777号。</p>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- 二 专利 -->
+	<view class="patent">
+		<view class="in_box">
+			<view class="patent_title">
+				<h6>企业荣获专利</h6>
+				<p>专业致力于全自动电脑洗车机产品研发、生产、销售服务于一体的高新技术企业</p>
+			</view>
+			<view class="patent_tu">
+				<view class="pat_tu">
+					<ul>
+						<li>
+							<!-- a 链接 -->
+							<view class="pat_tu1">
+								<image src="../images/pat_tu.jpg"></image>
+							</view>
+						</li>
+						<li>
+							<!-- a 链接 -->
+							<view class="pat_tu1">
+								<image src="../images/pat_tu.jpg"></image>
+							</view>
+						</li>
+					</ul>
+				</view>
+				<view class="pat_jian">
+					<view class="pat_l">
+						<image src="../images/pat_l.jpg"></image>
+					</view>
+					<view class="pat_r">
+						<image src="../images/pat_r.jpg"></image>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+
+	<!-- 历史 -->
+	<view class="history">
+		<view class="history_img">
+			<image src="../images/history_img.jpg"></image>
+		</view>
+		<view class="history_nr">
+			<view class="history_tit">
+				<image src="../images/history_tit.png"></image>
+			</view>
+			<view class="history_list">
+				<view class="his_left">
+					<ul>
+						<li class="his_on">
+							<view class="his1_l">
+								<view class="his1_wen">
+									<p>2015年 专业致力于全自动电脑洗车机产品研发、生产、销售服务于一体的高新技术企业</p>
+								</view>
+							</view>
+							<view class="his2_i"></view>
+							<view class="his3_dian"></view>
+						</li>
+						<li>
+							<view class="his1_l">
+								<view class="his1_wen">
+									<p>2015年 专业致力于全自动电脑洗车机产品研发、生产、销售服务于一体的高新技术企业</p>
+								</view>
+							</view>
+							<view class="his2_i"></view>
+							<view class="his3_dian"></view>
+						</li>
+					</ul>
+				</view>
+				<view class="his_zhong"></view>
+				<view class="his_right">
+					<ul>
+						<li>
+							<view class="his3_dian"></view>
+							<view class="his2_i"></view>
+							<view class="his1_l his_r">
+								<view class="his1_wen">
+									<p>2015年 专业致力于全自动电脑洗车机产品研发、生产、销售服务于一体的高新技术企业</p>
+								</view>
+							</view>
+						</li>
+						<li>
+							<view class="his3_dian"></view>
+							<view class="his2_i"></view>
+							<view class="his1_l his_r">
+								<view class="his1_wen">
+									<p>2015年 专业致力于全自动电脑洗车机产品研发、生产、销售服务于一体的高新技术企业</p>
+								</view>
+							</view>
+						</li>
+					</ul>
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<!-- 合作伙伴 -->
+	<view class="in_box">
+
+		<view class="cooper_wen">
+			<h6>合作伙伴</h6>
+		</view>
+		<view class="cooperation">
+			<ul>
+				<li>
+					<view class="coo_tu">
+						<image src="../images/coo_img.jpg"></image>
+					</view>
+				</li>
+				<li>
+					<view class="coo_tu">
+						<image src="../images/coo_img.jpg"></image>
+					</view>
+				</li>
+				<li>
+					<view class="coo_tu">
+						<image src="../images/coo_img.jpg"></image>
+					</view>
+				</li>
+				<li>
+					<view class="coo_tu">
+						<image src="../images/coo_img.jpg"></image>
+					</view>
+				</li>
+				<li>
+					<view class="coo_tu">
+						<image src="../images/coo_img.jpg"></image>
+					</view>
+				</li>
+				<li>
+					<view class="coo_tu">
+						<image src="../images/coo_img.jpg"></image>
+					</view>
+				</li>
+			</ul>
+		</view>
+	</view>
+</view>
+<view wx:for="{{list}}" wx:if="{{indexs==index}}" class="in_box">
+	<rich-text nodes="{{list[index].contents}}"></rich-text>
+</view>
+
+
+<!-- 联系我们 -->
+<view wx:if="{{false}}">
+	<!-- 小标题 -->
+	<view class="in_box" wx:if="{{index==3}}">
+		<view class="contact">
+			<view class="contact_title">
+				<view class="con_tit_tu">
+					<image src="../images/contact_tit.jpg"></image>
+				</view>
+			</view>
+			<view class="contact_nr">
+				<ul>
+					<li>
+						<h6>市场 / 合作 </h6>
+						<p>邮箱：JHJM@juhejingmi.com</p>
+					</li>
+					<li>
+						<h6>HR人事招聘</h6>
+						<p>联系人：撒经理</p>
+						<p>手机号：13853420370撒经理</p>
+					</li>
+					<li>
+						<h6>客户服务</h6>
+						<p>服务热线：400-012-1909</p>
+						<p>帮助中心：13853420370撒经理</p>
+						<p>客服邮箱：JHJM@juhejingmi.com</p>
+						<p>地址：山东省德州市庆云县尙堂镇厚德路777号</p>
+					</li>
+				</ul>
+			</view>
+			<view class="map">
+				<image src="../images/map.jpg"></image>
+			</view>
+		</view>
+	</view>
+
+
+</view>
+<!-- 共用底部 -->
+<!-- 空标签 -->
+<view style="height:120rpx"></view>
+<!-- 底部 -->
+<view class="footer">
+	<view class="in_box">
+		<view class="foot_l">
+			<ul>
+				<li>
+					<!-- a链接 -->
+					<view class="foot_in {{route=='pages/index/index'?'':'foot_in1'}}" bindtap="indexIn">
+						<view class="foot_in_img">
+							<image src="{{route=='pages/index/index'?'../images/foot_in1.png':'../images/foot_in.png'}}"></image>
+						</view>
+						<p>首页</p>
+					</view>
+				</li>
+				<li>
+					<!-- a链接 -->
+					<!-- <view class="foot_in foot_in1">
+						<view class="foot_in_img">
+							<image src="../images/foot_web.png"></image>
+						</view>
+						<p>在线咨询</p>
+					</view> -->
+					<button size="mini" open-type="contact" style="font-size:24rpx">
+						<view class="foot_in_img">
+							<image src="../images/foot_web.png"></image>
+						</view>在线咨询
+					</button>
+				</li>
+			</ul>
+		</view>
+		<view class="foot_r">
+			<view class="foot_r_nr" bindtap="callBack">
+				<!-- a 链接 -->
+				<view class="r_tu">
+					<image src="../images/r_tu.png"></image>
+				</view>
+				<view class="r_wen">
+					<p>一键拨打</p>
+				</view>
+
+			</view>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,151 @@
+<!-- 头部共用 -->
+<!-- 头部 -->
+<view class="in_boxs">
+	<view class="in_box">
+		<view class="index_top">
+			<view class="logo">
+				<image src="../images/logo.png"></image>
+			</view>
+			<view class="top_right">
+				<view class="top_r_l">
+					<view class="phone1">
+						<p>24小时免费电话</p>
+					</view>
+					<view class="phone2">
+						<view class="phone2_img">
+							<image src="../images/phone1.png"></image>
+						</view>
+						<view class="phone2_wen">
+							<p>400-678-8888</p>
+						</view>
+					</view>
+				</view>
+				<view class="top_r_r" bindtap="navSilce">
+					<image src="../images/nav.png"></image>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<!-- 导航 -->
+<view class="nav_zong" wx:if="{{isShow}}" bindtap="navSilce">
+	<view class="nav1">
+		<view class="in_box">
+			<view class="nav1_nr">
+				<ul>
+					<li catchtap="aboutUs">
+						<!-- a链接 -->
+						<p>关于我们</p>
+					</li>
+					<li catchtap="product">
+						<!-- a链接 -->
+						<p>产品中心</p>
+					</li>
+					<li catchtap="case">
+						<!-- a链接 -->
+						<p>案例中心</p>
+					</li>
+					<li catchtap="news">
+						<!-- a链接 -->
+						<p>新闻中心</p>
+					</li>
+					<li catchtap="video">
+						<!-- a链接 -->
+						<p>视频中心</p>
+					</li>
+					<li catchtap="service">
+						<!-- a链接 -->
+						<p>服务中心</p>
+					</li>
+					<li catchtap="contact">
+						<!-- a链接 -->
+						<p>联系我们</p>
+					</li>
+				</ul>
+			</view>
+		</view>
+
+	</view>
+</view>
+
+<!-- banner -->
+<view class="banner">
+	<image src="../images/banner.jpg"></image>
+</view>
+
+<!-- 面包屑 -->
+<view class="mbx">
+	<view class="in_box">
+		<view class="mbx_tu">
+			<image src="../images/mbx_tu.png"></image>
+		</view>
+		<view class="mbx_a">
+			<ul>
+				<li>
+					<!-- a 链接 -->
+					<p>首页</p> >
+				</li>
+				<li>
+					<!-- a 链接 -->
+					<p>安装视频</p>
+				</li>
+			</ul>
+		</view>
+	</view>
+</view>
+
+<!-- 内容 -->
+<view class="content">
+	<view class="in_box">
+		<view class="content_zi">
+			<h6>{{cont.title}}</h6>
+			<view class="video_img">
+				<video src="{{cont.videoPath}}"></video>
+			</view>
+
+			<rich-text nodes="{{cont.contents}}"></rich-text>	
+		</view>
+	</view>
+</view>
+
+<!-- 共用底部 -->
+<!-- 空标签 -->
+<view style="height:120rpx"></view>
+<!-- 底部 -->
+<view class="footer">
+	<view class="in_box">
+		<view class="foot_l">
+			<ul>
+				<li>
+					<!-- a链接 -->
+					<view class="foot_in">
+						<view class="foot_in_img">
+							<image src="../images/foot_in1.png"></image>
+						</view>
+						<p>首页</p>
+					</view>
+				</li>
+				<li>
+					<!-- a链接 -->
+					<button size="mini" open-type="contact" style="font-size:24rpx">
+						<view class="foot_in_img">
+							<image src="../images/foot_web.png"></image>
+						</view>在线咨询
+					</button>
+				</li>
+			</ul>
+		</view>
+		<view class="foot_r">
+			<view class="foot_r_nr">
+				<!-- a 链接 -->
+				<view class="r_tu">
+					<image src="../images/r_tu.png"></image>
+				</view>
+				<view class="r_wen">
+					<p>一键拨打</p>
+				</view>
+
+			</view>
+		</view>
+	</view>
+</view>

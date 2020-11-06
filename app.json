@@ -1,0 +1,27 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/index1/index1",
+    "pages/Introduction/Introduction",
+    "pages/product1/product1",
+    "pages/news1/news1",
+    "pages/news/news",
+    "pages/contact/contact",
+    "pages/service/service",
+    "pages/product/product",
+    "pages/case1/case1",
+    "pages/case/case",
+    "pages/video/video",
+    "pages/video1/video1",
+    "pages/logs/logs"
+
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

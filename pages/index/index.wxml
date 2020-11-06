@@ -1,0 +1,320 @@
+<!--index.wxml-->
+
+<!-- 头部 -->
+<view class="in_boxs">
+	<view class="in_box">
+		<view class="index_top">
+			<view class="logo">
+				<image src="../images/logo.png"></image>
+			</view>
+			<view class="top_right">
+				<view class="top_r_l">
+					<view class="phone1">
+						<p>24小时免费电话</p>
+					</view>
+					<view class="phone2">
+						<view class="phone2_img">
+							<image src="../images/phone1.png"></image>
+						</view>
+						<view class="phone2_wen">
+							<p>{{phone}}</p>
+						</view>
+					</view>
+				</view>
+				<view class="top_r_r" bindtap="navSilce">
+					<image src="../images/nav.png"></image>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+
+<!-- 导航 -->
+<view class="nav_zong" wx:if="{{isShow}}" bindtap="navSilce">
+	<view class="nav1">
+		<view class="in_box">
+			<view class="nav1_nr">
+				<ul>
+					<li catchtap="aboutUs">
+						<!-- a链接 -->
+						<p>关于我们</p>
+					</li>
+					<li catchtap="product">
+						<!-- a链接 -->
+						<p>产品中心</p>
+					</li>
+					<li catchtap="case">
+						<!-- a链接 -->
+						<p>案例中心</p>
+					</li>
+					<li catchtap="news">
+						<!-- a链接 -->
+						<p>新闻中心</p>
+					</li>
+					<li catchtap="video">
+						<!-- a链接 -->
+						<p>视频中心</p>
+					</li>
+					<li catchtap="service">
+						<!-- a链接 -->
+						<p>服务中心</p>
+					</li>
+					<li catchtap="contact">
+						<!-- a链接 -->
+						<p>联系我们</p>
+					</li>
+				</ul>
+			</view>
+		</view>
+
+	</view>
+</view>
+
+<!-- banner -->
+<view class="banner">
+	<image src="{{adver[0].pic}}"></image>
+</view>
+
+<!-- 金刚位-->
+<view class="hot">
+	<ul>
+		<li>
+			<!-- a链接 -->
+			<view class="hot_icon" bindtap="hotProducts">
+				<image src="../images/hot-1.png"></image>
+			</view>
+			<view class="hot_wen">
+				<p>热门产品</p>
+			</view>
+		</li>
+		<li>
+			<!-- a链接 -->
+			<view class="hot_icon" bindtap="afterSale">
+				<image src="../images/hot-2.png"></image>
+			</view>
+			<view class="hot_wen">
+				<p>售后视频</p>
+			</view>
+		</li>
+		<li>
+			<!-- a链接 -->
+			<view class="hot_icon" bindtap="honor">
+				<image src="../images/hot-3.png"></image>
+			</view>
+			<view class="hot_wen">
+				<p>荣誉资质</p>
+			</view>
+		</li>
+		<li>
+			<!-- a链接 -->
+			<view class="hot_icon" bindtap="about">
+				<image src="../images/hot-4.png"></image>
+			</view>
+			<view class="hot_wen">
+				<p>关于我们</p>
+			</view>
+		</li>
+	</ul>
+</view>
+
+<!-- 分隔线 -->
+<view class="separated"></view>
+
+<!-- 产品分类 -->
+<view class="in_box">
+	<view class="product">
+		<view class="pro_title">
+			<span>产品分类</span>
+			<view class="pro_p">
+				<p>实用、简单、市场反馈率好的产品</p>
+			</view>
+			<!-- a 链接 -->
+			<h6>更多 >></h6>
+		</view>
+		<view class="pro_nr">
+			<ul>
+				<li wx:for="{{productList}}" bindtap="typeDetail" data-id="{{item.id}}">
+					<!-- a 链接 -->
+					<view class="pro_img">
+						<image src="{{item.pic}}"></image>
+					</view>
+					<view class="pro_wen">
+						<p>{{item.name}}</p>
+					</view>
+				</li>
+
+				<li>
+					<!-- a 链接 -->
+					<view class="pro_more">
+						<view class="pro_jia">
+							<image src="../images/jia.png"></image>
+						</view>
+						<h6>查看更多</h6>
+					</view>
+				</li>
+			</ul>
+		</view>
+	</view>
+</view>
+
+<!-- 广告图 -->
+<view class="guang">
+	<image src="{{adver[1].pic}}"></image>
+</view>
+
+<!-- 产品展示 -->
+<view class="in_box">
+	<view class="pro_show">
+		<view class="pro_title">
+			<span>产品展示</span>
+			<view class="pro_p">
+				<p>实用、简单、市场反馈率好的产品</p>
+			</view>
+			<!-- a 链接 -->
+			<h6>更多 >></h6>
+		</view>
+		<view class="show_zong">
+			<view class="show_nr">
+				<view class="pro_nr show_hi">
+					<ul>
+						<li wx:for="{{producShow}}"  bindtap="ShowDetail" data-id="{{item.id}}">
+							<!-- a 链接 -->
+							<view class="pro_img">
+								<image src="{{item.pic}}"></image>
+							</view>
+							<view class="pro_wen">
+								<p>{{item.name}}</p>
+							</view>
+							<view class="pro_biao">
+								<span>价格:￥{{item.price}}元</span>
+								<p>咨询详情</p>
+							</view>
+						</li>
+					</ul>
+				</view>
+			</view>
+			<view class="show_jian">
+				<view class="jian_l">
+					<image src="../images/jian_l.jpg"></image>
+				</view>
+				<view class="jian_r">
+					<image src="../images/jian_r.jpg"></image>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<!-- 箭头------------ -->
+
+<!-- 分隔线 -->
+<view class="separated"></view>
+
+<!-- 企业视频 -->
+<view class="in_box">
+	<view class="video">
+		<view class="pro_title">
+			<span>企业视频</span>
+			<!-- a 链接 -->
+			<h6>更多 >></h6>
+		</view>
+		<view class="video_nr">
+			<image src="../images/video_img.jpg"></image>
+		</view>
+	</view>
+</view>
+
+<!-- 分隔线 -->
+<view class="separated"></view>
+
+<!-- 新闻资讯 -->
+<view class="in_box">
+	<view class="in_news">
+		<view class="pro_title">
+			<span>新闻资讯</span>
+			<view class="pro_p">
+				<p>实用、简单、市场反馈率好的产品</p>
+			</view>
+			<!-- a 链接 -->
+			<h6>更多 >></h6>
+		</view>
+		<view class="in_news_nr">
+			<view class="in_news_title">
+				<view class="in_n_l">
+					<image src="{{newTitle.pic}}"></image>
+				</view>
+				<view class="in_n_r">
+					<h6>{{newTitle.title}}</h6>
+					<p>{{newTitle.summary}}</p>
+					<span>{{newTitle.valTime}}</span>
+				</view>
+			</view>
+			<view class="news_bo">
+				<ul>
+					<li wx:for="{{newsList}}">
+						<!-- a 链接 -->
+						<view class="news_li_l">
+							<view class="ne_img">
+								<image src="../images/ne_img.png"></image>
+							</view>
+							<view class="ne_wen">
+								<p>{{item.title}}</p>
+							</view>
+						</view>
+						<view class="news_li_r">
+							<span>{{item.valTime}}</span>
+						</view>
+					</li>
+
+				</ul>
+			</view>
+		</view>
+	</view>
+</view>
+<!-- 空标签 -->
+<view style="height:120rpx"></view>
+<!-- 底部 -->
+<view class="footer">
+	<view class="in_box">
+		<view class="foot_l">
+			<ul>
+				<li>
+					<!-- a链接 -->
+					<view class="foot_in">
+						<view class="foot_in_img">
+							<image src="{{route=='pages/index/index'?'../images/foot_in1.png':'../images/foot_in.png'}}"></image>
+						</view>
+						<p>首页</p>
+					</view>
+				</li>
+				<li>
+					<!-- a链接 -->
+
+					<!-- <view class="foot_in foot_in1">
+						<view class="foot_in_img">
+							<image src="../images/foot_web.png"></image>
+						</view>
+						<p>在线咨询</p>
+					</view> -->
+					<button size="mini" open-type="contact" style="font-size:24rpx">
+						<view class="foot_in_img">
+							<image src="../images/foot_web.png"></image>
+						</view>在线咨询
+					</button>
+				</li>
+			</ul>
+		</view>
+		<view class="foot_r" bindtap="callBack">
+			<view class="foot_r_nr">
+				<!-- a 链接 -->
+				<view class="r_tu">
+					<image src="../images/r_tu.png"></image>
+				</view>
+				<view class="r_wen">
+					<p>一键拨打</p>
+				</view>
+
+			</view>
+		</view>
+	</view>
+</view>

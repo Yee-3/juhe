@@ -1,0 +1,704 @@
+/* pages/Introduction/Introduction.wxss */
+/* pages/contact/contact.wxss */
+/* index头部 */
+.in_box {
+  width: 96%;
+  margin: 0 auto;
+}
+
+.index_top {
+  width: 100%;
+  padding: 10rpx 0 20rpx 0;
+  overflow: hidden;
+}
+
+.logo {
+  width: 321rpx;
+  height: 90rpx;
+  float: left;
+}
+
+.top_right {
+  width: 350rpx;
+  float: right;
+}
+
+.top_r_l {
+  width: 250rpx;
+  float: left;
+}
+
+.phone1 {
+  float: right;
+  overflow: hidden;
+  width: 185rpx;
+  height: 45rpx;
+  background-image: linear-gradient(to right, #c2a439, #eec329);
+  text-align: center;
+  margin-bottom: 10rpx;
+}
+
+.phone1 p {
+  font-size: 22rpx;
+  color: #fff;
+  line-height: 45rpx;
+}
+
+.phone2 {
+  overflow: hidden;
+  width: 100%;
+  height: 40rpx;
+}
+
+.phone2_img {
+  width: 22rpx;
+  height: 27rpx;
+  float: left;
+  margin-top: 5rpx;
+}
+
+.phone2_wen {
+  margin-left: 15rpx;
+  float: left;
+}
+
+.phone2_wen p {
+  font-size: 32rpx;
+  color: #333;
+}
+
+.top_r_r {
+  width: 55rpx;
+  height: 47rpx;
+  float: right;
+  margin-top: 25rpx;
+}
+
+/* index banner */
+.banner {
+  width: 100%;
+  height: 380rpx;
+  padding-top:125rpx
+}
+.in_box {
+  width: 96%;
+  margin: 0 auto;
+}
+
+.index_top {
+  width: 100%;
+  padding: 10rpx 0 20rpx 0;
+  overflow: hidden;
+}
+
+.logo {
+  width: 321rpx;
+  height: 90rpx;
+  float: left;
+}
+
+.top_right {
+  width: 350rpx;
+  float: right;
+}
+
+.top_r_l {
+  width: 250rpx;
+  float: left;
+}
+
+.phone1 {
+  float: right;
+  overflow: hidden;
+  width: 185rpx;
+  height: 45rpx;
+  background-image: linear-gradient(to right, #c2a439, #eec329);
+  text-align: center;
+  margin-bottom: 10rpx;
+}
+
+.phone1 p {
+  font-size: 22rpx;
+  color: #fff;
+  line-height: 45rpx;
+}
+
+.phone2 {
+  overflow: hidden;
+  width: 100%;
+  height: 40rpx;
+}
+
+.phone2_img {
+  width: 22rpx;
+  height: 27rpx;
+  float: left;
+  margin-top: 5rpx;
+}
+
+.phone2_wen {
+  margin-left: 15rpx;
+  float: left;
+}
+
+.phone2_wen p {
+  font-size: 32rpx;
+  color: #333;
+}
+
+.top_r_r {
+  width: 55rpx;
+  height: 47rpx;
+  float: right;
+  margin-top: 25rpx;
+}
+
+/* index banner */
+.banner {
+  width: 100%;
+  height: 380rpx;
+}
+/* 导航 */
+.nav_zong {
+  position: fixed;
+  top: 120rpx;
+  left: 0;
+  /* background: #fff; */
+  width: 100%;
+  height: 100%;
+}
+.nav1 {
+  width: 100%;
+  /* height:900rpx; */
+  background: #8c8c8c;
+  position: fixed;
+  top: 120rpx;
+  z-index: 22;
+}
+
+.nav1_nr {
+  overflow: hidden;
+  /* padding-top:40rpx; */
+}
+
+.nav1_nr ul li {
+  overflow: hidden;
+  display: block;
+  border-bottom: rgba(255, 255, 255, 0.3) 1rpx solid;
+  padding: 30rpx 0;
+}
+
+.nav1_nr ul li:hover {
+  background: #e4433b;
+}
+
+.nav1_nr ul li p {
+  font-size: 32rpx;
+  color: #fff;
+  display: block;
+  text-align: center;
+}
+/* 底部 */
+.footer {
+  width: 100%;
+  box-shadow: 0rpx 4rpx 8rpx #999;
+  height: 114rpx;
+  position: fixed;
+  bottom: 0;
+  z-index: 9;
+  background: #fff;
+}
+
+.foot_in_img {
+  width: 57rpx;
+  height: 49rpx;
+  margin: 0 auto;
+}
+li button{
+  min-width: 120rpx;
+  border: none;
+  background: #fff;
+  font-weight: normal;
+  font-size: 24rpx;
+  padding: 0;
+  margin: 0;
+  color: #c3c2c2;
+}
+.foot_l {
+  overflow: hidden;
+  padding: 15rpx 0;
+  width: 50%;
+  float: left;
+}
+
+.foot_l ul {
+  overflow: hidden;
+}
+
+.foot_l ul li {
+  width: 50%;
+  float: left;
+}
+
+.foot_in {
+  width: 120rpx;
+  text-align: center;
+}
+
+.foot_in p {
+  font-size: 24rpx;
+  color: #ec1c12;
+}
+
+.foot_in1 p {
+  color: #c3c2c2;
+}
+
+.foot_r {
+  width: 48%;
+  float: right;
+  background: #ec1c12;
+  border-radius: 50rpx;
+  height: 80rpx;
+  margin: 20rpx 0 15rpx 0;
+ 
+}
+
+.foot_r_nr {
+  width: 190rpx;
+  margin: 17rpx auto 0 auto;
+}
+
+.r_tu {
+  width: 40rpx;
+  height: 40rpx;
+  float: left;
+  margin-top: 5rpx;
+}
+
+.r_wen {
+  float: right;
+}
+
+.r_wen p {
+  font-size: 34rpx;
+  color: #fff;
+}
+/* 通用宽度 */
+.in_box {
+  width: 96%;
+  margin: 0 auto;
+}
+
+/* 面包屑 */
+.mbx{
+  width:100%;
+  border-bottom:#dddddd 1rpx solid;
+  margin-top:15rpx;
+  padding-bottom:15rpx;
+  display: block;
+}
+.mbx_tu{
+  width:25rpx;
+  height:25rpx;
+  float: left;
+}
+.mbx_a{
+  padding-left:15rpx;
+  overflow: hidden;
+}
+.mbx_a ul li{
+   color:#333;  
+}
+.mbx_a ul li p{
+  font-size:24rpx;
+  color:#333;
+}
+
+/* 内容 */
+.contact{
+  margin:40rpx 0;
+}
+.con_tit_tu{
+  width:181rpx;
+  height:27rpx;
+  margin: 0 auto;
+}
+.contact_nr{
+  width:85%;
+  margin:50rpx  auto 0 auto;
+}
+.contact_nr ul li{
+    box-shadow:0rpx 0rpx  8rpx  rgba(32, 32, 32, 0.15);
+    padding:40rpx 0;
+    width:100%;
+    display:inline-block;
+    text-align: center;
+    margin-bottom:50rpx;
+    border-radius:20rpx;
+}
+.contact_nr ul li h6{
+    font-size:36rpx;
+    color:#333;
+    font-weight:600;
+    width:100%;
+    display: block;
+}
+.contact_nr ul li p{
+  font-size:26rpx;
+  color:#666;
+  width:100%;
+  margin-top:15rpx;
+  display: inline-block;
+}
+
+.map{
+  width:100%;
+  height:560rpx;
+}
+
+/* 通用宽度 */
+.in_box {
+  width: 96%;
+  margin: 0 auto;
+}
+
+/* 面包屑 */
+.mbx {
+  width: 100%;
+  border-bottom: #dddddd 1rpx solid;
+  margin-top: 15rpx;
+  padding-bottom: 15rpx;
+  display: block;
+}
+
+.mbx_tu {
+  width: 25rpx;
+  height: 25rpx;
+  float: left;
+}
+
+.mbx_a {
+  padding-left: 15rpx;
+  overflow: hidden;
+}
+
+.mbx_a ul li {
+  color: #333;
+}
+
+.mbx_a ul li p {
+  font-size: 24rpx;
+  color: #333;
+}
+
+/* 内容 */
+.introduction_top {
+  margin-top: 20rpx;
+  overflow: hidden;
+}
+
+/* tab标题 */
+.case_title {
+  width: 100%;
+  margin-top: 30rpx;
+  overflow: hidden;
+}
+
+.case_title ul li {
+  background: #6f6f6f;
+  height: 60rpx;
+  width: 48%;
+  float: left;
+  margin: 0 4% 3% 0;
+}
+
+.case_title ul li:nth-child(2n) {
+  margin-right: 0;
+}
+
+.case_title ul .case_on {
+  background: #ec1c12;
+}
+
+.case_title ul li p {
+  font-size: 24rpx;
+  color: #fff;
+  line-height: 60rpx;
+  text-align: center;
+  display: block;
+}
+
+.tro_tit {
+  width: 539rpx;
+  height: 60rpx;
+  margin: 0 auto;
+}
+
+.intro_wen {
+  margin-top: 30rpx;
+}
+
+.tro_wen {
+  text-align: center;
+  margin-top: -15rpx;
+}
+
+.tro_wen h6 {
+  font-size: 32rpx;
+  color: #666;
+}
+
+.intro_wen1 {
+  margin-top: 30rpx;
+}
+
+.intro_wen2 {
+  text-indent: 50rpx;
+  margin-bottom: 20rpx;
+}
+
+.intro_wen2 p {
+  font-size: 24rpx;
+  text-align: justify;
+  line-height: 30rpx;
+}
+
+/* 专利 */
+.patent {
+  width: 100%;
+  background: #f2f2f2;
+  padding: 40rpx 0 60rpx 0;
+  margin-top: 30rpx;
+  overflow: hidden;
+}
+
+.patent_title {
+  text-align: center;
+}
+
+.patent_title h6 {
+  font-size: 40rpx;
+  color: #333;
+  display: block;
+  font-weight: 600;
+  margin-bottom: 15rpx;
+}
+
+.patent_title p {
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 30rpx;
+}
+
+.pat_tu {
+  width: 95%;
+  margin: 30rpx auto 0 auto;
+  overflow: hidden;
+}
+
+.pat_tu1 {
+  width: 321rpx;
+  height: 460rpx;
+}
+
+.pat_tu ul li {
+  float: left;
+  margin-right: 45rpx;
+}
+
+.pat_tu ul li:nth-child(2n) {
+  margin-right: 0;
+}
+
+.patent_tu {
+  position: relative;
+}
+
+.pat_jian {
+  position: absolute;
+  top: 45%;
+  width: 100%;
+}
+
+.pat_l {
+  width: 47rpx;
+  height: 69rpx;
+  float: left;
+}
+
+.pat_r {
+  width: 47rpx;
+  height: 69rpx;
+  float: right;
+}
+
+/* 历史 */
+.history{
+  position: relative;
+}
+.history_nr{
+  position: absolute;
+  top:40rpx;
+  width:100%;
+}
+.history_list {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  margin-top:40rpx;
+}
+
+.history {
+  width: 100%;
+}
+
+.history_img {
+  width: 100%;
+  height: 919rpx;
+}
+
+.history_tit {
+  width: 329rpx;
+  height: 122rpx;
+  margin: 0 auto;
+}
+
+.his_zhong {
+  width: 0.5%;
+  height: 644rpx;
+  background: #c70025;
+  display: block;
+  margin: 0 auto;
+  overflow: hidden;
+  float: left;
+}
+
+.his_left {
+  width:44%;
+  float: left;
+  margin: 50rpx -16rpx 0 60rpx;
+  z-index:99999;
+}
+
+.his_left ul li {
+  overflow: hidden;
+  margin-bottom:130rpx;
+  display: block;
+}
+
+.his1_l {
+  width: 280rpx;
+  height: 145rpx;
+  background: #ed6c72;
+  border-radius: 15rpx;
+  float: left;
+}
+
+.his1_wen {
+  padding: 10rpx 15rpx;
+  overflow: hidden;
+  line-height: 26rpx;
+}
+
+.his1_wen p {
+  font-size: 20rpx;
+
+}
+
+.his2_i {
+  width: 30rpx;
+  height: 1rpx;
+  display: block;
+  background: #ed6c72;
+  float: left;
+  margin-top: 20%;
+}
+
+.his3_dian {
+  width: 18rpx;
+  height: 18rpx;
+  display: block;
+  background: #fff;
+  border-radius: 50%;
+  float: left;
+  margin-top: 18%;
+  border: #ed6c72 1rpx solid;
+}
+
+.his_right {
+  width:38%;
+  float: right;
+  margin:130rpx 60rpx 0 0;
+  z-index: 9999;
+}
+
+.his_right ul li {
+  overflow: hidden;
+  display: block;
+  margin:0 0 130rpx -42rpx;
+}
+
+.his_r {
+  float: left;
+  width: 280rpx;
+}
+
+.history_list .his_left ul .his_on .his1_wen p {
+  color: #fff;
+}
+
+.history_list .his_left ul .his_on .his1_l {
+  background: #c70025;
+}
+
+.history_list .his_left ul .his_on .his2_i {
+  background: #c70025;
+}
+
+.history_list .his_left ul .his_on .his3_dian {
+  background: #c70025;
+}
+
+
+
+
+
+
+.cooper_wen {
+  text-align: center;
+  margin-top: 30rpx;
+  overflow: hidden;
+  width: 100%;
+}
+
+.cooper_wen p {
+  font-size: 38rpx;
+  color: #333;
+}
+
+.cooperation {
+  width: 94%;
+  margin: 40rpx auto;
+  overflow: hidden;
+}
+
+.cooperation ul li {
+  width: 31%;
+  float: left;
+  margin: 0 22rpx 30rpx 0;
+}
+
+.cooperation ul li:nth-child(3n) {
+  margin-right: 0;
+}
+
+.coo_tu {
+  width: 201rpx;
+  height: 201rpx;
+}
+
+.coo_tu image {
+  border: #dddddd 1rpx solid;
+  border-radius: 20rpx;
+}

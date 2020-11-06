@@ -1,0 +1,72 @@
+<!--pages/index1/index1.wxml-->
+
+<!-- 头部 -->
+<view class="in_boxs">
+	<view class="in_box">
+		<view class="index_top">
+			<view class="logo">
+				<image src="../images/logo.png"></image>
+			</view>
+			<view class="top_right">
+				<view class="top_r_l">
+					<view class="phone1">
+						<p>24小时免费电话</p>
+					</view>
+					<view class="phone2">
+						<view class="phone2_img">
+							<image src="../images/phone1.png"></image>
+						</view>
+						<view class="phone2_wen">
+							<p>400-678-8888</p>
+						</view>
+					</view>
+				</view>
+				<view class="top_r_r" bindtap="navSilce">
+					<image src="../images/nav.png"></image>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+
+<!-- 导航 -->
+<view class="nav_zong">
+	<view class="nav1">
+		<view class="in_box">
+			<view class="nav1_nr">
+				<ul>
+					<li>
+						<!-- a链接 -->
+						<p>关于我们</p>
+					</li>
+					<li>
+						<!-- a链接 -->
+						<p>产品中心</p>
+					</li>
+					<li>
+						<!-- a链接 -->
+						<p>案例中心</p>
+					</li>
+					<li>
+						<!-- a链接 -->
+						<p>新闻中心</p>
+					</li>
+					<li>
+						<!-- a链接 -->
+						<p>视频中心</p>
+					</li>
+					<li>
+						<!-- a链接 -->
+						<p>服务中心</p>
+					</li>
+					<li>
+						<!-- a链接 -->
+						<p>联系我们</p>
+					</li>
+				</ul>
+			</view>
+		</view>
+
+	</view>
+</view>
