@@ -10,7 +10,7 @@ Page({
     route: '',
     list: [],
     phone: wx.getStorageSync('phone'),
-    adver: wx.getStorageSync('adver'),
+    adver: [],
   },
 
   /**
@@ -18,6 +18,8 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
+      phone: wx.getStorageSync('phone'),
+      adver: wx.getStorageSync('adver'),
       route: this.route
     })
     var that = this
@@ -33,7 +35,6 @@ Page({
         'content-type': 'application/x-www-form-urlencoded',
       },
       success: function (res) {
-        console.log(res.data.data)
         that.setData({
           list: res.data.data
         })
@@ -77,11 +78,7 @@ Page({
       that.navSilce()
     }, 500)
   },
-  indexIn() {
-    wx.reLaunch({
-      url: '../index/index',
-    })
-  },
+  
   // 案例中心
   case () {
     wx.redirectTo({
@@ -94,7 +91,7 @@ Page({
   },
   // 新闻中心
   news() {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../news/news',
     })
     var that = this
@@ -141,7 +138,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+  
   },
 
   /**

@@ -19,13 +19,14 @@ App({
     })
      // 广告位
      wx.request({
-      url:'https://tuiguang.yunxiaoer88.com/api/Article/GetAdvertisementHomePage',
+      url:'https://tuiguang.yunxiaoer88.com/api/Article/GetHomePageBannerList',
       data: {},
       method: 'GET',
       header: {
         'content-type': 'application/x-www-form-urlencoded',
       },
       success: function (res) {
+        // console.log(res)
         wx.setStorageSync('adver', res.data.data)
       }
     })

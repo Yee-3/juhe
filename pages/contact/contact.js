@@ -1,3 +1,4 @@
+const baseUrl = getApp().globalData.baseUrl
 // pages/contact/contact.js
 Page({
 
@@ -5,17 +6,43 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    phone: wx.getStorageSync('phone'),
+    adver: [],
+    cont: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this
+    this.setData({
+			phone: wx.getStorageSync('phone'),
+			adver: wx.getStorageSync('adver'),
+		})
+    wx.request({
+      url: baseUrl + '/api/Article/GetArticleDetailByArticleId',
+      data: {
+        ArticleId: 'f0606ff3-c408-45a7-b575-ac6900bf3862'
+      },
+      method: 'GET',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      success: function (res) {
+        that.setData({
+          cont: res.data.data
+        })
+      }
+    })
+  },
+  // 打电话
+  callBack() {
+    wx.makePhoneCall({
+      phoneNumber: this.data.phone,
+    })
   },
   onPageScroll(e) {
-    console.log('滚起来')
     this.setData({
       isShow: false
     })
@@ -58,7 +85,7 @@ Page({
   },
   // 新闻中心
   news() {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../news/news',
     })
     var that = this
@@ -90,10 +117,10 @@ Page({
   contact() {
     this.navSilce()
   },
-  indexIn(){
+  indexIn() {
     wx.reLaunch({
       url: '/pages/index/index'
-  })
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

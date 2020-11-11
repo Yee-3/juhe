@@ -38,7 +38,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.13.0",
-  "appid": "wxb9c80cc944b62b0e",
+  "appid": "wxee8f712589c4e903",
   "projectname": "%E5%B1%B1%E4%B8%9C%E8%81%9A%E5%90%88",
   "debugOptions": {
     "hidedInDevtools": []
@@ -85,6 +85,25 @@
         {
           "name": "pages/Introduction/Introduction",
           "pathName": "pages/Introduction/Introduction",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/service/service",
+          "pathName": "pages/service/service",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/product1/product1",
+          "pathName": "pages/product1/product1",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/product1/product1",
+          "pathName": "pages/product1/product1",
+          "query": "",
           "scene": null
         }
       ]

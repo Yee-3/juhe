@@ -13,7 +13,7 @@ Page({
     loadingType: 0,
     list: [],
     phone: wx.getStorageSync('phone'),
-    adver: wx.getStorageSync('adver'),
+    adver: [],
   },
 
   /**
@@ -21,6 +21,10 @@ Page({
    */
   onLoad: function (options) {
     var that = this
+    this.setData({
+			phone: wx.getStorageSync('phone'),
+			adver: wx.getStorageSync('adver'),
+		})
     // 新闻列表
     wx.request({
       url: baseUrl + '/api/Article/GetArticleTypeListByParentId',
@@ -136,7 +140,6 @@ Page({
     })
   },
   onPageScroll(e) {
-    console.log('滚起来')
     this.setData({
       isShow: false
     })
@@ -192,7 +195,7 @@ Page({
   },
   // 新闻中心
   news() {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../news/news',
     })
     var that = this

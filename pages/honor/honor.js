@@ -23,7 +23,7 @@ Page({
     wx.request({
       url: baseUrl + '/api/Article/GetArticleDetailByArticleId',
       data: {
-        ArticleId: '974c291c-5a89-4ee2-917e-ac6900c48bd6'
+        ArticleId: '9603d6ed-8453-435f-9391-ac690111f4de'
       },
       method: 'GET',
       header: {
@@ -85,7 +85,7 @@ Page({
   },
   // 新闻中心
   news() {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../news/news',
     })
     var that = this
@@ -105,7 +105,13 @@ Page({
   },
   // 服务中心
   service() {
-   this.navSilce()
+    wx.redirectTo({
+      url: '../service/service',
+    })
+    var that = this
+    setTimeout(function () {
+      that.navSilce()
+    }, 500)
   },
   // 联系我们
   contact() {

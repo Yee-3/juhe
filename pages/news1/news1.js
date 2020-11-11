@@ -7,7 +7,7 @@ Page({
    */
   data: {
     phone: wx.getStorageSync('phone'),
-    adver: wx.getStorageSync('adver'),
+    adver: [],
     cont:{}
   },
 
@@ -15,8 +15,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(this.data.phone)
    var that = this
+   this.setData({
+    phone: wx.getStorageSync('phone'),
+    adver: wx.getStorageSync('adver'),
+  })
     wx.request({
       url: baseUrl + '/api/Article/GetArticleDetailByArticleId',
       data: {
@@ -27,7 +30,6 @@ Page({
         'content-type': 'application/x-www-form-urlencoded',
       },
       success: function (res) {
-        console.log(res.data.data)
         that.setData({
          cont:res.data.data
         })
@@ -42,7 +44,6 @@ Page({
     })
   },
   onPageScroll(e) {
-    console.log('滚起来')
     this.setData({
       isShow: false
     })

@@ -7,7 +7,7 @@ Page({
    */
   data: {
     phone: wx.getStorageSync('phone'),
-    adver: wx.getStorageSync('adver'),
+    adver: [],
     cont: {}
   },
 
@@ -16,6 +16,10 @@ Page({
    */
   onLoad: function (options) {
     var that = this
+    this.setData({
+			phone: wx.getStorageSync('phone'),
+			adver: wx.getStorageSync('adver'),
+		})
     wx.request({
       url: baseUrl + '/api/Article/GetArticleDetailByArticleId',
       data: {
@@ -26,7 +30,6 @@ Page({
         'content-type': 'application/x-www-form-urlencoded',
       },
       success: function (res) {
-        console.log(res.data.data)
         that.setData({
           cont: res.data.data
         })
@@ -35,8 +38,13 @@ Page({
 
 
   },
+    // 打电话
+    callBack() {
+      wx.makePhoneCall({
+        phoneNumber: this.data.phone,
+      })
+    },
   onPageScroll(e) {
-    console.log('滚起来')
     this.setData({
       isShow: false
     })
@@ -79,7 +87,7 @@ Page({
   },
   // 新闻中心
   news() {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../news/news',
     })
     var that = this

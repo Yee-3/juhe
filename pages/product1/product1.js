@@ -8,6 +8,10 @@ Page({
   data: {
     cont: {},
     isShow: false,
+    currentIndex: 0,
+    pics: [],
+    phone: '',
+    adver: []
   },
 
   /**
@@ -15,6 +19,11 @@ Page({
    */
   onLoad: function (options) {
     var that = this
+    this.setData({
+      phone: wx.getStorageSync('phone'),
+      adver: wx.getStorageSync('adver'),
+    })
+    console.log(this.data.adver)
     wx.request({
       url: baseUrl + '/api/Product/GetProductDetailByProductId',
       data: {
@@ -25,16 +34,57 @@ Page({
         'content-type': 'application/x-www-form-urlencoded',
       },
       success: function (res) {
-        console.log(res.data.data)
+        var arr = res.data.data.systemProductBannerImageList
+        if (arr.length > 0) {
+          arr.map(function (val, i) {
+            val.imgUrl = val.imgUrl.indexOf('http') == '-1' ? baseUrl + val.imgUrl : val.imgUrl
+          })
+        }
         that.setData({
-          cont: res.data.data,
+          cont: res.data.data.systemProduct,
+          pics: res.data.data.systemProductBannerImageList
         })
       }
     })
   },
+  swiperChange(e) {
+    console.log(e)
+    this.setData({
+      currentIndex: e.detail.current
+    })
+  },
+  // 点击左侧按钮
+  toLift: function (e) {
+    var index = this.data.currentIndex;
+    // index>0,点击一次index+1
+    if (index > 0) {
+      this.setData({
+        currentIndex: index - 1
+      })
+    } else {
+      // 如果index=0,在第一个位置,则滑到最后一个
+      this.setData({
+        currentIndex: this.data.pics.length - 1
+      })
+    }
+  },
+  // 点击右侧按钮
+  toRight: function (e) {
+    console.log
+    var index = this.data.currentIndex
+    if (index >= this.data.pics.length - 1) {
+      this.setData({
+        currentIndex: 0
+      })
+    } else {
+      this.setData({
+        currentIndex: index + 1
+      })
+    }
+
+  },
   // 滚动隐藏
   onPageScroll(e) {
-    console.log('滚起来')
     this.setData({
       isShow: false
     })
@@ -57,9 +107,9 @@ Page({
   },
   // 产品中心
   product() {
-   wx.navigateBack({
-     delta: 1,
-   })
+    wx.navigateBack({
+      delta: 1,
+    })
   },
   // 案例中心
   case () {
@@ -73,7 +123,7 @@ Page({
   },
   // 新闻中心
   news() {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../news/news',
     })
     var that = this

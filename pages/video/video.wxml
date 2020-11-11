@@ -22,7 +22,7 @@
 						</view>
 					</view>
 				</view>
-				<view class="top_r_r"  bindtap="navSilce">
+				<view class="top_r_r" bindtap="navSilce">
 					<image src="../images/nav.png"></image>
 				</view>
 			</view>
@@ -73,7 +73,11 @@
 
 <!-- banner -->
 <view class="banner">
-	<image src="{{adver[0].pic}}"></image>
+	<swiper autoplay='2' interval="{{2000}}" style="height:100%" circular>
+		<swiper-item wx:for="{{adver}}">
+			<image src="{{item.pic}}"></image>
+		</swiper-item>
+	</swiper>
 </view>
 <!-- 面包屑 -->
 <view class="mbx">
@@ -89,7 +93,7 @@
 				</li>
 				<li>
 					<!-- a 链接 -->
-					<p>案例中心</p>
+					<p>视频中心</p>
 				</li>
 			</ul>
 		</view>
@@ -147,14 +151,14 @@
 				</li>
 			</ul>
 		</view>
-		<view class="foot_r" >
+		<view class="foot_r">
 			<view class="foot_r_nr" bindtap="callBack">
-			<!-- a 链接 -->
+				<!-- a 链接 -->
 				<view class="r_tu">
 					<image src="../images/r_tu.png"></image>
 				</view>
 				<view class="r_wen">
-				  <p>一键拨打</p>
+					<p>一键拨打</p>
 				</view>
 
 			</view>

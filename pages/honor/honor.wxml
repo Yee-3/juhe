@@ -1,4 +1,4 @@
-<!--pages/case/case.wxml-->
+<!--pages/service/service.wxml-->
 
 <!-- 共用头部 -->
 <!-- 头部 -->
@@ -29,7 +29,6 @@
 		</view>
 	</view>
 </view>
-
 <!-- 导航 -->
 <view class="nav_zong" wx:if="{{isShow}}" bindtap="navSilce">
 	<view class="nav1">
@@ -79,6 +78,7 @@
 		</swiper-item>
 	</swiper>
 </view>
+
 <!-- 面包屑 -->
 <view class="mbx">
 	<view class="in_box">
@@ -93,7 +93,7 @@
 				</li>
 				<li>
 					<!-- a 链接 -->
-					<p>案例中心</p>
+					<p>荣誉资质</p>
 				</li>
 			</ul>
 		</view>
@@ -101,35 +101,36 @@
 </view>
 
 <!-- 内容 -->
-<!-- tab小标题 -->
+<!-- 标题 -->
 <view class="in_box">
-	<view class="case_zong">
-		<view class="case_title">
-			<ul>
-				<li class="{{titleIndex==index?'case_on':''}}" data-id="{{item.articleTypeId}}" data-index="{{index}}" bindtap="toggleTitle"
-				 wx:for="{{caseList}}">
-					<!-- tab -->
-					<p>{{item.name}}</p>
-				</li>
-			</ul>
+	<rich-text nodes="{{cont.contents}}"></rich-text>
+	<!-- <view class="service">
+		<view class="service_title">
+			<view class="ser_tit_on">
+				<image src="../images/ser_tit_on.jpg"></image>
+			</view>
+			<view class="ser_wen">
+				<view class="ser_wen1">
+					<p> 衡量产品质量的好坏，不只是看企业是否满意，也不能单看是否符合技术标准，而是要以用户的评价来衡量，企业要时时把用户需要放在第一位。</p>
+				</view>
+				<view class="ser_wen1">
+					<p>（1）对用户开展技术服务。包括随机附带说明书；传授安装、使用和维修技术；设立维修网点和具有专门技术服务人员上门服务、出具维修凭证；随时提供备品、配件、安装、调试和运行及负责培训技术。</p>
+				</view>
+				<view class="ser_wen1">
+					<p>（2）对使用效果与使用要求的调查。定期组织人员深入用户，收集反馈信息，建立档案，以求改进。</p>
+				</view>
+				<view class="ser_wen1">
+					<p>（3）对产品质量负责到底。针对用户反馈意见，企业应抱着对人民负责，为用户着想的态度，热情对待，及对处理，属于产品质量问题的，企业要勇于承袒一切责任。</p>
+				</view>
+				<view class="ser_wen1">
+					<p> 一个企业质量保证工作开展得再好，产品设计、制造过程质量保证水平再高，当产品投入用户使用以后，都不可避免会出现问题。因此，企业的售后服务应具备；售后服务工作的及时性；有为用户上门服务的能力；有良好的服务作用。 </p>
+				</view>
+				<view class="ser_wen1">
+					<p> 一个企业质量保证工作开展得再好，产品设计、制造过程质量保证水平再高，当产品投入用户使用以后，都不可避免会出现问题。因此，企业的售后服务应具备；售后服务工作的及时性；有为用户上门服务的能力；有良好的服务作用。 </p>
+				</view>
+			</view>
 		</view>
-
-		<view class="case_nr">
-			<ul>
-				<li wx:for="{{list}}" bindtap="caseDetail" data-id="{{item.articleId}}">
-					<!-- a 链接 -->
-					<view class="case_tu">
-						<image src="{{item.pic}}"></image>
-					</view>
-					<view class="case_wen">
-						<p>{{item.title}}</p>
-					</view>
-				</li>
-			</ul>
-		</view>
-
-
-	</view>
+	</view> -->
 </view>
 
 <!-- 共用底部 -->

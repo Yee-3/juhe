@@ -16,7 +16,13 @@ Page({
     producShow: [],
     newsList: [],
     newTitle: {},
-    adver:[]
+    advers: [],
+    adver:[],
+    producChild:[],
+    video:{},
+    duration: 500, //滑块动画时长
+    index: 0,
+    currentIndex: 0
   },
   //事件处理函数
   bindViewTap: function () {
@@ -55,7 +61,6 @@ Page({
         }
       })
     }
-    console.log(this.route, getCurrentPages().route)
     // 手机号
     wx.request({
       url: baseUrl + '/api/Config/GetYingXiaoPhone',
@@ -83,7 +88,20 @@ Page({
         that.setData({
           producShow: res.data.data
         })
-
+        var list=[]
+        var num=Math.ceil( res.data.data.length/2)
+        for (var i = 0; i < num; i++) {
+          var arr = []
+          res.data.data.map(function(val, index) {
+            if (index >= i * 2 && index < (i + 1) * 2) {
+              arr.push(val)
+            }
+          })
+          list.push(arr)
+          that.setData({
+            producChild:list
+          })
+        }
       }
     })
     // 产品分类  
@@ -97,7 +115,7 @@ Page({
       success: function (res) {
         that.setData({
           productList: res.data.data,
-          id: res.data.data[0].id
+          // id: res.data.data[0].id
         })
       }
     })
@@ -110,7 +128,6 @@ Page({
         'content-type': 'application/x-www-form-urlencoded',
       },
       success: function (res) {
-        console.log(res.data.data)
         if (res.data.data.length > 0) {
           res.data.data.map(function (val, i) {
             val.valTime = val.createTime.substring(0, 10)
@@ -135,11 +152,105 @@ Page({
       },
       success: function (res) {
         that.setData({
-          adver: res.data.data,
+          advers: res.data.data,
+        })
+      }
+    })
+    // 广告位
+    wx.request({
+      url:'https://tuiguang.yunxiaoer88.com/api/Article/GetHomePageBannerList',
+      data: {},
+      method: 'GET',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      success: function (res) {
+        that.setData({
+          adver:res.data.data
         })
       }
     })
 
+    // 首页推荐视频
+    wx.request({
+      url: baseUrl + '/api/Article/GetRecommendVideoList',
+      data: {},
+      method: 'GET',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      success: function (res) {
+        res.data.data[0].videoPath=res.data.data[0].videoPath.indexOf('http')=='-1'?baseUrl+res.data.data[0].videoPath:res.data.data[0].videoPath
+        that.setData({
+          video: res.data.data[0],
+        })
+      }
+    })
+
+  },
+  changeIndex: function (e) {
+    // 设置indexe=当前滑块的index
+    this.setData({
+      index: e.detail.current
+    })
+  },
+  // 点击左侧按钮
+  toLift: function (e) {
+    var index = this.data.index;
+    // index>0,点击一次index+1
+    if (index > 0) {
+      this.setData({
+        currentIndex: index - 1
+      })
+    } else {
+      // 如果index=0,在第一个位置,则滑到最后一个
+      this.setData({
+        currentIndex: this.data.producChild.length - 1
+      })
+    }
+  },
+  // 点击右侧按钮
+  toRight: function (e) {
+    var index = this.data.index
+    if (index >= this.data.producChild.length-1) {
+      this.setData({
+        currentIndex: 0
+      })
+    } else {
+      this.setData({
+        currentIndex: index + 1
+      })
+    }
+
+  },
+  newsMore(){
+    wx.navigateTo({
+      url: '../news/news',
+    })
+  },
+  	// 详情
+	productDetail(e) {
+		wx.navigateTo({
+			url: '../product1/product1?id=' + e.currentTarget.dataset.id,
+		})
+	},
+  // 视频
+  videoMore(){
+    wx.navigateTo({
+      url: '../video/video',
+    })
+  },
+  // 产品分类
+  typeDetail(e) {
+    if (e.currentTarget.dataset.id) {
+      wx.navigateTo({
+        url: '../product/product?id=' + e.currentTarget.dataset.id,
+      })
+    } else {
+      wx.navigateTo({
+        url: '../product/product',
+      })
+    }
   },
   // 打电话
   callBack() {
@@ -160,7 +271,11 @@ Page({
     })
   },
   // 荣誉资质
-  honor() {},
+  honor() {
+    wx.navigateTo({
+      url: '../honor/honor',
+    })
+  },
   // 关于我们
   about() {
     wx.navigateTo({
@@ -210,7 +325,7 @@ Page({
   },
   // 新闻中心
   news() {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../news/news',
     })
     var that = this
@@ -250,7 +365,6 @@ Page({
   },
 
   getUserInfo: function (e) {
-    console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,

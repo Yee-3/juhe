@@ -73,7 +73,11 @@
 
 <!-- banner -->
 <view class="banner">
-	<image src="{{adver[0].pic}}"></image>
+	<swiper autoplay='2' interval="{{2000}}" style="height:100%" circular>
+		<swiper-item wx:for="{{adver}}">
+			<image src="{{item.pic}}"></image>
+		</swiper-item>
+	</swiper>
 </view>
 
 <!-- 金刚位-->
@@ -130,7 +134,7 @@
 				<p>实用、简单、市场反馈率好的产品</p>
 			</view>
 			<!-- a 链接 -->
-			<h6>更多 >></h6>
+			<h6 bindtap="typeDetail">更多 >></h6>
 		</view>
 		<view class="pro_nr">
 			<ul>
@@ -144,7 +148,7 @@
 					</view>
 				</li>
 
-				<li>
+				<li bindtap="typeDetail">
 					<!-- a 链接 -->
 					<view class="pro_more">
 						<view class="pro_jia">
@@ -160,7 +164,7 @@
 
 <!-- 广告图 -->
 <view class="guang">
-	<image src="{{adver[1].pic}}"></image>
+	<image src="{{advers[0].pic}}"></image>
 </view>
 
 <!-- 产品展示 -->
@@ -172,33 +176,33 @@
 				<p>实用、简单、市场反馈率好的产品</p>
 			</view>
 			<!-- a 链接 -->
-			<h6>更多 >></h6>
+			<h6 bindtap="typeDetail">更多 >></h6>
 		</view>
 		<view class="show_zong">
-			<view class="show_nr">
-				<view class="pro_nr show_hi">
-					<ul>
-						<li wx:for="{{producShow}}"  bindtap="ShowDetail" data-id="{{item.id}}">
-							<!-- a 链接 -->
-							<view class="pro_img">
-								<image src="{{item.pic}}"></image>
-							</view>
-							<view class="pro_wen">
-								<p>{{item.name}}</p>
-							</view>
-							<view class="pro_biao">
-								<span>价格:￥{{item.price}}元</span>
-								<p>咨询详情</p>
-							</view>
-						</li>
-					</ul>
-				</view>
-			</view>
+			<swiper class="swiper" duration="{{duration}}" style="height:390rpx" current="{{currentIndex}}"
+				bindchange="changeIndex">
+				<swiper-item wx:for="{{producChild}}" class="scrollPages">
+					<view class="lis" wx:for="{{item}}" wx:for-index="indexs" wx:for-item="items" bindtap="ShowDetail"
+						data-id="{{items.id}}">
+						<!-- a 链接 -->
+						<view class="pro_img">
+							<image src="{{items.pic}}"></image>
+						</view>
+						<view class="pro_wen">
+							<p>{{items.name}}</p>
+						</view>
+						<view class="pro_biao" bindtap="productDetail" data-id="{{items.id}}">
+							<span>价格:￥{{items.price}}元</span>
+							<p>咨询详情</p>
+						</view>
+					</view>
+				</swiper-item>
+			</swiper>
 			<view class="show_jian">
-				<view class="jian_l">
+				<view class="jian_l" bindtap="toLift">
 					<image src="../images/jian_l.jpg"></image>
 				</view>
-				<view class="jian_r">
+				<view class="jian_r" bindtap="toRight">
 					<image src="../images/jian_r.jpg"></image>
 				</view>
 			</view>
@@ -216,10 +220,11 @@
 		<view class="pro_title">
 			<span>企业视频</span>
 			<!-- a 链接 -->
-			<h6>更多 >></h6>
+			<h6 bindtap="videoMore">更多 >></h6>
 		</view>
 		<view class="video_nr">
-			<image src="../images/video_img.jpg"></image>
+			<!-- <image src="../images/video_img.jpg"></image> -->
+			<video src="{{video.videoPath}}"></video>
 		</view>
 	</view>
 </view>
@@ -236,7 +241,7 @@
 				<p>实用、简单、市场反馈率好的产品</p>
 			</view>
 			<!-- a 链接 -->
-			<h6>更多 >></h6>
+			<h6 bindtap="newsMore">更多 >></h6>
 		</view>
 		<view class="in_news_nr">
 			<view class="in_news_title">

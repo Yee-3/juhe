@@ -1,5 +1,4 @@
-/* pages/product1/product1.wxss */
-/* pages/product/product.wxss */
+/* pages/service/service.wxss */
 .in_box {
   width: 96%;
   margin: 0 auto;
@@ -77,7 +76,7 @@
 .banner {
   width: 100%;
   height: 380rpx;
-  padding-top: 125rpx
+  padding-top:125rpx
 }
 
 /* 导航 */
@@ -89,7 +88,6 @@
   width: 100%;
   height: 100%;
 }
-
 .nav1 {
   width: 100%;
   /* height:900rpx; */
@@ -121,7 +119,6 @@
   display: block;
   text-align: center;
 }
-
 /* 底部 */
 .footer {
   width: 100%;
@@ -138,8 +135,7 @@
   height: 49rpx;
   margin: 0 auto;
 }
-
-li button {
+li button{
   min-width: 120rpx;
   border: none;
   background: #fff;
@@ -149,7 +145,6 @@ li button {
   margin: 0;
   color: #c3c2c2;
 }
-
 .foot_l {
   overflow: hidden;
   padding: 15rpx 0;
@@ -187,7 +182,7 @@ li button {
   border-radius: 50rpx;
   height: 80rpx;
   margin: 20rpx 0 15rpx 0;
-
+ 
 }
 
 .foot_r_nr {
@@ -210,7 +205,6 @@ li button {
   font-size: 34rpx;
   color: #fff;
 }
-
 
 /* 通用宽度 */
 .in_box {
@@ -248,105 +242,20 @@ li button {
 }
 
 /* 内容 */
-.product1 {
-  margin: 40rpx 0;
+.service{
+  margin:30rpx 0;
 }
-
-.pro1_p {
-  text-align: center;
+.ser_tit_on{
+  width:181rpx;
+  height:28rpx;
+  margin:0 auto 30rpx auto;
 }
-
-.pro1_p p {
-  font-size: 32rpx;
-  color: #333;
-  text-align: center;
+.ser_wen1{
+  text-indent:50rpx;
+  margin-top:15rpx;
 }
-
-.pro1_tu {
-  width: 90%;
-  margin: 30rpx auto 0 auto;
-}
-
-.pro1_tu1 {
-  width: 100%;
-  height: 415rpx;
-  border: #ddd 1px solid;
-}
-
-.pro1_tu {
-  position: relative;
-}
-
-.pro1_jian {
-  position: absolute;
-  top: 45%;
-  width: 100%;
-}
-
-.l_jian {
-  width: 42rpx;
-  height: 42rpx;
-  float: left;
-  margin-left: 20rpx;
-}
-
-.r_jian {
-  width: 42rpx;
-  height: 42rpx;
-  float: right;
-  margin-right: 20rpx;
-}
-
-.pro1_dian {
-  width: 100%;
-  margin: 30rpx auto;
-  /* overflow: hidden; */
-}
-
-.dian_pic {
-  overflow: hidden;
-  width: fit-content;
-  margin-left: 50%;
-  transform: translateX(-50%);
-}
-.dian_on{
-  background:#ec1c12 !important;
-}
-/* .pro1_di {
- 
-} */
-
-.dian_pic .pro1_di:last-child {
-  margin-right: 0;
-
-
-}
-
-.pro1_dian ul li {
-  float: left;
-  margin-right: 20rpx;
-}
-
-.pro1_dian ul li:last-child {
-  margin-right: 0;
-}
-
-.pro1_di {
-  width: 20rpx;
-  height: 20rpx;
-  background: #dedede;
-  display: block;
-  border-radius: 35rpx;
-  margin-right: 20rpx;
-  float: left;
-}
-
-.pro1_dian ul .on1 .pro1_di {
-  background: #ec1c12;
-}
-
-.pro1_img {
-  width: 100%;
-  /* height:4738rpx; */
-  text-align: center;
+.ser_wen1 p{
+  font-size:24rpx;
+  color:#666;
+  line-height:28rpx;
 }

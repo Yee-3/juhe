@@ -13,7 +13,7 @@ Page({
 		loadingType: 0,
 		list: [],
 		phone: wx.getStorageSync('phone'),
-		adver: wx.getStorageSync('adver'),
+		adver:[],
 	},
 
 	/**
@@ -21,6 +21,10 @@ Page({
 	 */
 	onLoad: function(options) {
 		var that = this
+		this.setData({
+			phone: wx.getStorageSync('phone'),
+			adver: wx.getStorageSync('adver'),
+		})
 		// 新闻列表
 		wx.request({
 			url: baseUrl + '/api/Article/GetArticleTypeListByParentId',
@@ -156,7 +160,6 @@ Page({
 		})
 	},
 	onPageScroll(e) {
-		console.log('滚起来')
 		this.setData({
 			isShow: false
 		})
@@ -275,7 +278,6 @@ Page({
 	 * 页面上拉触底事件的处理函数
 	 */
 	onReachBottom: function() {
-		console.log(1)
 		var data = {
 			ArticleTypeId: this.data.titleId,
 			offset: this.data.offset + 9,

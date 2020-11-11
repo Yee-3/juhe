@@ -10,7 +10,7 @@ Page({
     loadingType: 0,
     list: [],
     phone: wx.getStorageSync('phone'),
-    adver: wx.getStorageSync('adver'),
+    adver: [],
   },
 
   /**
@@ -18,6 +18,10 @@ Page({
    */
   onLoad: function (options) {
     var that = this
+    this.setData({
+			phone: wx.getStorageSync('phone'),
+			adver: wx.getStorageSync('adver'),
+		})
     var data = {
       ArticleTypeId: 'b3b3ee5b-6a3c-453d-9874-ac6a00ac89b0',
       offset: that.data.offset,
@@ -115,7 +119,6 @@ Page({
     })
   },
   onPageScroll(e) {
-    console.log('滚起来')
     this.setData({
       isShow: false
     })
@@ -164,7 +167,7 @@ Page({
   },
   // 新闻中心
   news() {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../news/news',
     })
     var that = this

@@ -12,13 +12,20 @@ Page({
 		offset: 0,
 		loadingType: 0,
 		list: [],
-		id: ''
+		id: '',
+		phone: wx.getStorageSync('phone'),
+		adver: [],
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
-	onLoad: function(options) {
+	onLoad: function (options) {
+		console.log(wx.getStorageSync('adver'))
+		this.setData({
+			phone: wx.getStorageSync('phone'),
+			adver: wx.getStorageSync('adver'),
+		})
 		var that = this
 		wx.request({
 			url: baseUrl + '/api/Product/GetProductTypeList',
@@ -27,21 +34,34 @@ Page({
 			header: {
 				'content-type': 'application/x-www-form-urlencoded',
 			},
-			success: function(res) {
-				console.log(res.data.data)
+			success: function (res) {
 				that.setData({
 					titleList: res.data.data,
-					id: res.data.data[0].id
 				})
+				if (options.id) {
+					that.setData({
+						id: options.id
+					})
+				} else {
+					that.setData({
+						id: res.data.data[0].id
+					})
+				}
 				var data = {
-					productTypeId: res.data.data[0].id,
+					productTypeId: options.id ? options.id : res.data.data[0].id,
 					offset: that.data.offset,
 					count: 9
 				}
 				that.getList(data)
 			}
 		})
+	},
 
+	// 打电话
+	callBack() {
+		wx.makePhoneCall({
+			phoneNumber: this.data.phone,
+		})
 	},
 	// 获取列表
 	// 获取数据
@@ -55,8 +75,7 @@ Page({
 			header: {
 				'content-type': 'application/x-www-form-urlencoded',
 			},
-			success: function(res) {
-				console.log(res.data.data)
+			success: function (res) {
 				that.setData({
 					list: res.data.data
 				})
@@ -98,7 +117,7 @@ Page({
 			header: {
 				'content-type': 'application/x-www-form-urlencoded',
 			},
-			success: function(res) {
+			success: function (res) {
 				that.setData({
 					list: that.data.list.concat(res.data.data)
 				})
@@ -118,7 +137,6 @@ Page({
 	},
 	// 标题切换
 	toggleIndex(e) {
-		console.log(e)
 		this.setData({
 			titleIndex: e.currentTarget.dataset.index,
 			id: e.currentTarget.dataset.id,
@@ -139,7 +157,6 @@ Page({
 	},
 	// 滚动隐藏
 	onPageScroll(e) {
-		console.log('滚起来')
 		this.setData({
 			isShow: false
 		})
@@ -156,7 +173,7 @@ Page({
 			url: '../Introduction/Introduction',
 		})
 		var that = this
-		setTimeout(function() {
+		setTimeout(function () {
 			that.navSilce()
 		}, 500)
 	},
@@ -170,17 +187,17 @@ Page({
 			url: '../case/case',
 		})
 		var that = this
-		setTimeout(function() {
+		setTimeout(function () {
 			that.navSilce()
 		}, 500)
 	},
 	// 新闻中心
 	news() {
-		wx.navigateTo({
+		wx.redirectTo({
 			url: '../news/news',
 		})
 		var that = this
-		setTimeout(function() {
+		setTimeout(function () {
 			that.navSilce()
 		}, 500)
 	},
@@ -190,7 +207,7 @@ Page({
 			url: '../video/video',
 		})
 		var that = this
-		setTimeout(function() {
+		setTimeout(function () {
 			that.navSilce()
 		}, 500)
 	},
@@ -200,7 +217,7 @@ Page({
 			url: '../service/service',
 		})
 		var that = this
-		setTimeout(function() {
+		setTimeout(function () {
 			that.navSilce()
 		}, 500)
 	},
@@ -210,7 +227,7 @@ Page({
 			url: '../contact/contact',
 		})
 		var that = this
-		setTimeout(function() {
+		setTimeout(function () {
 			that.navSilce()
 		}, 500)
 	},
@@ -224,42 +241,42 @@ Page({
 	/**
 	 * 生命周期函数--监听页面初次渲染完成
 	 */
-	onReady: function() {
+	onReady: function () {
 
 	},
 
 	/**
 	 * 生命周期函数--监听页面显示
 	 */
-	onShow: function() {
+	onShow: function () {
 
 	},
 
 	/**
 	 * 生命周期函数--监听页面隐藏
 	 */
-	onHide: function() {
+	onHide: function () {
 
 	},
 
 	/**
 	 * 生命周期函数--监听页面卸载
 	 */
-	onUnload: function() {
+	onUnload: function () {
 
 	},
 
 	/**
 	 * 页面相关事件处理函数--监听用户下拉动作
 	 */
-	onPullDownRefresh: function() {
+	onPullDownRefresh: function () {
 
 	},
 
 	/**
 	 * 页面上拉触底事件的处理函数
 	 */
-	onReachBottom: function() {
+	onReachBottom: function () {
 		var data = {
 			productTypeId: this.data.id,
 			offset: this.data.offset + 9,
@@ -271,7 +288,7 @@ Page({
 	/**
 	 * 用户点击右上角分享
 	 */
-	onShareAppMessage: function() {
+	onShareAppMessage: function () {
 
 	}
 })
