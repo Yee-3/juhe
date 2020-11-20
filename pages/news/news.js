@@ -43,7 +43,7 @@ Page({
 				var data = {
 					ArticleTypeId: res.data.data[0].articleTypeId,
 					offset: that.data.offset,
-					count: 9
+					count: 10
 				}
 				that.getList(data)
 			}
@@ -100,7 +100,7 @@ Page({
 	listMore(data) {
 		var that = this
 		this.setData({
-			offset: that.data.offset + 9
+			offset: that.data.offset + 10
 		})
 		if (this.data.loadingType != 0) {
 			//loadingType!=0;直接返回
@@ -149,7 +149,7 @@ Page({
 		var data = {
 			ArticleTypeId: e.currentTarget.dataset.id,
 			offset: this.data.offset,
-			count: 9
+			count: 10
 		}
 		this.getList(data)
 	},
@@ -280,8 +280,8 @@ Page({
 	onReachBottom: function() {
 		var data = {
 			ArticleTypeId: this.data.titleId,
-			offset: this.data.offset + 9,
-			count: 9
+			offset: this.data.offset +10,
+			count: 10
 		}
 		this.listMore(data)
 	},

@@ -318,8 +318,6 @@ li button {
 
 .dian_pic .pro1_di:last-child {
   margin-right: 0;
-
-
 }
 
 .pro1_dian ul li {

@@ -30,6 +30,7 @@ Page({
         'content-type': 'application/x-www-form-urlencoded',
       },
       success: function (res) {
+        res.data.data.contents= res.data.data.contents.replace(/\<img/gi, '<img style="max-width:100%;height:auto" ')
         that.setData({
           cont: res.data.data
         })

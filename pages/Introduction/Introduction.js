@@ -28,13 +28,16 @@ Page({
       data: {
         ArticleTypeId: '151939bb-74e2-4385-a9b9-ac6900bdb508',
         offset: 0,
-        count: 9
+        count: 10
       },
       method: 'GET',
       header: {
         'content-type': 'application/x-www-form-urlencoded',
       },
       success: function (res) {
+        res.data.data.map(function(val,i){
+         val.contents= val.contents.replace(/\<img/gi, '<img style="max-width:100%;height:auto" ')
+        })
         that.setData({
           list: res.data.data
         })

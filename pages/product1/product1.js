@@ -23,7 +23,6 @@ Page({
       phone: wx.getStorageSync('phone'),
       adver: wx.getStorageSync('adver'),
     })
-    console.log(this.data.adver)
     wx.request({
       url: baseUrl + '/api/Product/GetProductDetailByProductId',
       data: {
@@ -40,6 +39,7 @@ Page({
             val.imgUrl = val.imgUrl.indexOf('http') == '-1' ? baseUrl + val.imgUrl : val.imgUrl
           })
         }
+        res.data.data.systemProduct.detail=res.data.data.systemProduct.detail.replace(/\<img/gi, '<img style="max-width:100%;height:auto" ')
         that.setData({
           cont: res.data.data.systemProduct,
           pics: res.data.data.systemProductBannerImageList
@@ -48,7 +48,6 @@ Page({
     })
   },
   swiperChange(e) {
-    console.log(e)
     this.setData({
       currentIndex: e.detail.current
     })

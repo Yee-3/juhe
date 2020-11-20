@@ -50,7 +50,7 @@ Page({
 				var data = {
 					productTypeId: options.id ? options.id : res.data.data[0].id,
 					offset: that.data.offset,
-					count: 9
+					count: 10
 				}
 				that.getList(data)
 			}
@@ -100,7 +100,7 @@ Page({
 	listMore(data) {
 		var that = this
 		this.setData({
-			offset: that.data.offset + 9
+			offset: that.data.offset +10
 		})
 		if (this.data.loadingType != 0) {
 			//loadingType!=0;直接返回
@@ -145,7 +145,7 @@ Page({
 		var data = {
 			productTypeId: e.currentTarget.dataset.id,
 			offset: this.data.offset,
-			count: 9
+			count: 10
 		}
 		this.getList(data)
 	},
@@ -279,8 +279,8 @@ Page({
 	onReachBottom: function () {
 		var data = {
 			productTypeId: this.data.id,
-			offset: this.data.offset + 9,
-			count: 9
+			offset: this.data.offset + 10,
+			count: 10
 		}
 		this.listMore(data)
 	},

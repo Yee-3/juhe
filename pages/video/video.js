@@ -25,7 +25,7 @@ Page({
     var data = {
       ArticleTypeId: 'b3b3ee5b-6a3c-453d-9874-ac6a00ac89b0',
       offset: that.data.offset,
-      count: 9
+      count: 10
     }
     this.getList(data)
   },
@@ -78,7 +78,7 @@ Page({
   listMore(data) {
     var that = this
     this.setData({
-      offset: that.data.offset + 9
+      offset: that.data.offset + 10
     })
     if (this.data.loadingType != 0) {
       //loadingType!=0;直接返回
@@ -245,8 +245,8 @@ Page({
   onReachBottom: function () {
     var data = {
       ArticleTypeId: 'b3b3ee5b-6a3c-453d-9874-ac6a00ac89b0',
-      offset: this.data.offset+9,
-      count: 9
+      offset: this.data.offset+10,
+      count:10
     }
     this.listMore(data)
   },
